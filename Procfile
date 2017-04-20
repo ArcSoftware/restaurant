@@ -1,1 +1,1 @@
-web: java -jar target/restauranteur-1.0-SNAPSHOT.jar
+web: java $JAVA_OPTS -cp target/restauranteur-1.0-SNAPSHOT-jar-with-dependencies.jar com.ironyard.charlotte.Main
