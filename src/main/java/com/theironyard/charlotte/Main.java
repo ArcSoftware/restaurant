@@ -71,6 +71,8 @@ public class Main {
                 tables.put(t.tableID, t);
             }
 
+
+            res.header("Access-Control-Allow-Origin", "*");
             // SaveLoad.saveMenuRepository(new MenuRepo(tables));
             return "";
         });
