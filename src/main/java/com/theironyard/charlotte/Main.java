@@ -22,6 +22,7 @@ public class Main {
 
         Spark.after(((request, response) ->  {
             response.header("Content-Type", "application/json");
+            response.header("Access-Control-Allow-Origin", "*");
         }));
 
         orderMenu.add(new Menu(1, "Number 1", "Pizza with a side of fries, and a drink.",
