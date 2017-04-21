@@ -20,6 +20,9 @@ public class Main {
         port(Integer.valueOf((System.getenv("PORT"))));
         Spark.init();
 
+        Spark.after(((request, response) ->  {
+            response.header("Content-Type", "application/json");
+        }));
 
         orderMenu.add(new Menu(1, "Number 1", "Pizza with a side of fries, and a drink.",
                 6.99, true));
@@ -48,8 +51,8 @@ public class Main {
         });
 
 
-        Spark.post("/order/:id", (req, res) -> {
-            String order = req.queryParams("id");
+        Spark.post("/order/:menu_id", (req, res) -> {
+            String order = req.queryParams("menu_id");
             String body = req.body();
             Table t = gsonOut.fromJson(body, Table.class);
 
