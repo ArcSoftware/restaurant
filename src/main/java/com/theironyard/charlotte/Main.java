@@ -8,6 +8,8 @@ import spark.Spark;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static spark.Spark.port;
+
 public class Main {
     public static Gson gsonOut = new Gson();
     public static ArrayList<Menu> orderMenu = new ArrayList<>();
@@ -15,7 +17,9 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception{
+        port(Integer.valueOf((System.getenv("PORT"))));
         Spark.init();
+
 
         orderMenu.add(new Menu(1, "Number 1", "Pizza with a side of fries, and a drink.",
                 6.99, true));
