@@ -52,7 +52,7 @@ public class Main {
 
 
         Spark.post("/order/:menu_id", (req, res) -> {
-            String order = req.queryParams("menu_id");
+            String order = req.params("menu_id");
             String body = req.body();
             Table t = gsonOut.fromJson(body, Table.class);
 
